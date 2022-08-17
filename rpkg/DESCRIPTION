@@ -1,0 +1,26 @@
+Package: rpkg
+Title: an R package for "Flexibility of species interactions and ecological stability"
+Version: 0.0.0.9000
+Authors@R:
+    person(given = "Kazutaka",
+           family = "Kawatsu",
+           role = c("aut", "cre"),
+           email = "kazutakawatsu@gmail.com",
+           comment = c(ORCID = "0000-0003-4447-4761"))
+Description: This package includes functions for causality test and Jacobian-estimation
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+LinkingTo:
+    Rcpp, RcppEigen
+Imports:
+    Rcpp,
+    doParallel,
+    dplyr,
+    foreach,
+    glmnet,
+    magrittr,
+    stringr,
+    tibble,
+    rlang
