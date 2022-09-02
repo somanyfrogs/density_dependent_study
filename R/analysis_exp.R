@@ -57,6 +57,32 @@ system.time(dda_res <- foreach(br = treat, .combine = rbind) %do% {
 ### save result in 'data' directory
 dda_res %>% write_csv("data/dda_res.csv")
 
+## GLM analysis
+dda_res <- read_csv("data/dda_res.csv")
+dda_res %>% filter(rec_sp != "Ac") %>%
+    ggplot(aes(x = factor(BR), y = coef)) + facet_grid(rec_sp ~ don_sp) + geom_hline(yintercept = 0, linetype = 2) + geom_violin()
+
+dda_res %>% filter(rec_sp == "Cm" & don_sp == "Ac") %>% with(t.test(coef)) %>% broom::tidy()
+dda_res %>% filter(rec_sp == "Cm" & don_sp == "Cc") %>% with(t.test(coef)) %>% broom::tidy()
+dda_res %>% filter(rec_sp == "Cc" & don_sp == "Ac") %>% with(t.test(coef)) %>% broom::tidy()
+dda_res %>% filter(rec_sp == "Cc" & don_sp == "Cm") %>% with(t.test(coef)) %>% broom::tidy()
+
+a1 <- dda_res %>% filter(rec_sp == "Cm" & don_sp == "Ac") %>% with(lmer(coef ~ BR * rec_dens + (1|run)))
+a1 %>% broom.mixed::tidy()
+wald.test(b = fixef(a1), Sigma = vcov(a1), Term = 4)
+
+a2 <- dda_res %>% filter(rec_sp == "Cc" & don_sp == "Ac") %>% with(lmer(coef ~ BR * rec_dens + (1|run)))
+a2 %>% broom.mixed::tidy()
+wald.test(b = fixef(a2), Sigma = vcov(a2), Term = 4)
+
+a3 <- dda_res %>% filter(rec_sp == "Cc" & don_sp == "Cm") %>% with(lmer(coef ~ BR * rec_dens + (1|run)))
+a3 %>% broom.mixed::tidy()
+wald.test(b = fixef(a3), Sigma = vcov(a3), Term = 4)
+
+a4 <- dda_res %>% filter(rec_sp == "Cm" & don_sp == "Cc") %>% with(lmer(coef ~ BR * rec_dens + (1|run)))
+a4 %>% broom.mixed::tidy()
+wald.test(b = fixef(a4), Sigma = vcov(a4), Term = 4)
+
 ### Sensitivity analysis of density-dependence alteration for the target species
 treat <- c(0.2, 0.5, 0.8)
 cols <- c("Cm", "Cc", "Ac")
@@ -108,10 +134,9 @@ dds_res <- read_csv("data/dds_res.csv") %>% filter(rec_sp != "Ac") %>%
     mutate(don_sp = factor(case_when(don_sp == "both" ~ "Both",
                                      don_sp == "Ac" ~ "Parasitism",
                                      TRUE ~ "Competition"), levels = c("Parasitism", "Competition", "Both")))
-
-glm(sensitivity ~ rec_sp * rho + factor(BR), data = filter(dds_res, don_sp == "Parasitism"), family = Gamma(link = log)) %>% broom::tidy()
-glm(sensitivity ~ rec_sp * rho + factor(BR), data = filter(dds_res, don_sp == "Competition"), family = Gamma(link = log)) %>% broom::tidy()
-glm(sensitivity ~ rec_sp * rho + factor(BR), data = filter(dds_res, don_sp == "Both"), family = Gamma(link = log)) %>% broom::tidy()
+glm(sensitivity ~ rec_sp * rho + BR, data = filter(dds_res, don_sp == "Parasitism"), family = Gamma(link = log)) %>% broom::tidy()
+glm(sensitivity ~ rec_sp * rho + BR, data = filter(dds_res, don_sp == "Competition"), family = Gamma(link = log)) %>% broom::tidy()
+glm(sensitivity ~ rec_sp * rho + BR, data = filter(dds_res, don_sp == "Both"), family = Gamma(link = log)) %>% broom::tidy()
 
 ## make Figure 2a
 gp_02a <- read_csv("data/dda_res.csv") %>% filter(rec_sp != "Ac") %>%

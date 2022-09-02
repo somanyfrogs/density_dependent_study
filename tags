@@ -8,19 +8,16 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	5.9.0	//
-A	R/suppl_1.R	/^    A <- matrix(rnorm(size^2, 0, 0.05) * rbinom(size^2, 1, prop), nrow = size)$/;"	g
+!_TAG_PROGRAM_VERSION	5.9.0	/ee5f9c5/
 A	R/suppl_1.R	/^A <- matrix(c(0.0, -1.4,$/;"	g
 A_	R/functions.R	/^            A_ <- A$/;"	v	function:gen_dl_map
-A_	R/functions.R	/^        A_ <- A$/;"	v	function:gen_dl_model.fun
+A_	R/functions.R	/^        A_ <- A$/;"	v	functionVar:gen_dl_model.fun
 C	R/analysis_dlm.R	/^C <- matrix(c(-r[1], -0.10, 0.00,$/;"	g
 C_hat	R/functions.R	/^    C_hat <- loess(C_orig ~ dens, span = 1) %>% predict(dens)$/;"	v	function:shuffle_coef
 C_surr	R/functions.R	/^    C_surr <- C_orig - C_hat + mu + rho * (C_hat - mu) + sqrt(1 - rho^2) * rnorm(length(C_hat), /;"	v	function:shuffle_coef
 CallEntries	rpkg/src/RcppExports.cpp	/^static const R_CallMethodDef CallEntries[] = {$/;"	v	typeref:typename:const R_CallMethodDef[]	file:
 Description of rpkg	README.md	/^Description of rpkg$/;"	s
 E	R/analysis_fish.R	/^                E <- Es %>% filter(var == sp) %>% pull(E)$/;"	g
-E	R/analysis_fish.R	/^        E <- ccm_r %>% pull(E) %>% unique()$/;"	g
-E	R/analysis_fish.R	/^    E <- Es %>% filter(var == ref) %>% pull(E)$/;"	g
 E	R/suppl_1.R	/^        E <- df_ %>% find_best_dim(cols = "x1") %>% pull(E)$/;"	g
 E	R/suppl_2.R	/^        E <- ccm_r %>% pull(E) %>% unique()$/;"	g
 Es	R/analysis_exp.R	/^    Es <- df_ %>% find_best_dim(cols = cols, lib = lib, range = 1:10, Tps = Tps) %>%$/;"	g
@@ -38,9 +35,9 @@ S	R/suppl_1.R	/^        S <- foreach(i = which(A[1, ] != 0), .combine = c) %do% 
 S	R/suppl_2.R	/^        S <- dons %>% length()$/;"	g
 Smplx	rpkg/R/RcppExports.R	/^Smplx <- function(X, y, dmat, idxLib, idxPrd, nns) {$/;"	f
 Smplx	rpkg/src/func_cpp.cpp	/^Eigen::VectorXd Smplx(const Eigen::MatrixXd& X, const Eigen::RowVectorXd& y, const Eigen::Matrix/;"	f	typeref:typename:Eigen::VectorXd
-Tps	R/analysis_exp.R	/^Tps <- c(4, 4, 2)$/;"	c
-X	rpkg/R/func_ntsa.R	/^        X <- df %>% gen_emat(cols = rep(col, E), lags = 0:(sign(Tp) * -(E - 1)), knot = knot)$/;"	v	function:gen_emat.find_best_dim.smplx
-X	rpkg/R/func_ntsa.R	/^    X <- df %>% gen_emat(cols = rep(ref, E), lags = 0:-(E - 1), knot = lib)$/;"	v	function:gen_emat.xmap
+Tps	R/analysis_exp.R	/^Tps <- c(4, 4, 2)$/;"	g
+X	rpkg/R/func_ntsa.R	/^        X <- df %>% gen_emat(cols = rep(col, E), lags = 0:(sign(Tp) * -(E - 1)), knot = knot)$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+X	rpkg/R/func_ntsa.R	/^    X <- df %>% gen_emat(cols = rep(ref, E), lags = 0:-(E - 1), knot = lib)$/;"	v	functionVar:gen_emat.xmap
 __anonde0c69fe0102	rpkg/src/func_cpp.cpp	/^    sort(tmp.begin(), tmp.end(), [&vec](size_t i1, size_t i2) { return vec[i1] < vec[i2]; });$/;"	f	function:sortID	file:
 __anonde0c69fe0202	rpkg/src/func_cpp.cpp	/^    auto find_nn_pts = [&idxLib, &nns](size_t tar, const std::vector<double>& dist) {$/;"	f	function:Smplx	file:
 _rpkg_Smplx	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_Smplx(SEXP XSEXP, SEXP ySEXP, SEXP dmatSEXP, SEXP idxLibSEXP, SEXP idxPrdS/;"	f	typeref:typename:RcppExport SEXP
@@ -49,80 +46,55 @@ _rpkg_getNEDist	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getNEDist(SEXP 
 _rpkg_getPred	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getPred(SEXP CSEXP, SEXP XSEXP) {$/;"	f	typeref:typename:RcppExport SEXP
 _rpkg_getRMSE	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getRMSE(SEXP v1SEXP, SEXP v2SEXP) {$/;"	f	typeref:typename:RcppExport SEXP
 _rpkg_getRho	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getRho(SEXP v1SEXP, SEXP v2SEXP) {$/;"	f	typeref:typename:RcppExport SEXP
-anonFunc14c481530500	R/analysis_fish.R	/^    }, error = function(e) {$/;"	f
-anonFunc36822f700100	rpkg/R/func_surrogate.R	/^    idx <- which(apply(dmat, 1, function(r) !all(is.na(r))))$/;"	f	function:find_twins
-anonFunc36822f700200	rpkg/R/func_surrogate.R	/^        probs <- lapply(twins, function(v) {rep(1 \/ length(v), length(v))})$/;"	f	function:twin_probs
-anonFunc699d2e4b0800	R/suppl_2.R	/^    }, error = function(e) {$/;"	f
-anonFuncba4d64ea0200	rpkg/R/func_ntsa.R	/^        }, error = function(e) return(tibble(E = E, rho = NA, mae = NA, rmse = NA)))$/;"	f	function:gen_emat.find_best_dim.smplx
-anonFuncba4d64ea0400	rpkg/R/func_ntsa.R	/^    idx_all <- apply(dmat, 1, function(r) {sum(is.na(r)) != dim[1] - 1})$/;"	f	function:gen_emat.smap_net
-anonList14c481530407	R/analysis_fish.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	L
-anonList14c481530607	R/analysis_fish.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	L	function:anonFunc14c481530500
-anonList699d2e4b0707	R/suppl_2.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	L
-anonList699d2e4b0907	R/suppl_2.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	L	function:anonFunc699d2e4b0800
-anonVec14c481530206	R/analysis_fish.R	/^        emat <- fish %>% gen_emat(cols = c(dons, rep(rec, max(1, E - S))), lags = c(pull(ccm_r, /;"	c
-anonVec14c481530706	R/analysis_fish.R	/^    scale_color_manual(values = c(RColorBrewer::brewer.pal(3, "Set1")[1:2], "grey25"), guide = "/;"	c
-anonVec699d2a0a0106	R/suppl_1.R	/^A <- matrix(c(0.0, -1.4,$/;"	c
-anonVec699d2a0a0806	R/suppl_1.R	/^    pivot_longer(cols = c(4, 5), names_to = "method", values_to = "coef") %>%$/;"	c
-anonVec699d2a0a0906	R/suppl_1.R	/^    ungroup() %>% pivot_longer(cols = c(direct, indirect), names_to = "method", values_to = "RMS/;"	c
-anonVec699d2e4b0506	R/suppl_2.R	/^        emat <- fish %>% gen_emat(cols = c(dons, rep(rec, max(1, E - S))), lags = c(pull(ccm_r, /;"	c
-anonVec699d2e4b0a06	R/suppl_2.R	/^    scale_color_manual(values = c(RColorBrewer::brewer.pal(3, "Set1")[1:2], "grey25"), guide = "/;"	c
-anonVec9ba538260106	R/analysis_dlm.R	/^C <- matrix(c(-r[1], -0.10, 0.00,$/;"	c
-anonVec9ba538260206	R/analysis_dlm.R	/^P <- matrix(c(0.00, 0.00, -0.20,$/;"	c
-anonVec9ba538260306	R/analysis_dlm.R	/^    pivot_longer(-c(time, original), names_to = "shuffle", values_to = "prediction") %>%$/;"	c
-anonVec9ba538260a06	R/analysis_dlm.R	/^    scale_shape_manual(values = c(21, 25, 24), guide = "none") +$/;"	c
-anonVec9bbdf1f60106	R/analysis_exp.R	/^        emat <- df_ %>% gen_emat(cols = c(rep(cols[i], pull(Es, cols[i]) - 2), "sv1", "sv2"), la/;"	c
-anonVec9bbdf1f60206	R/analysis_exp.R	/^            gen_emat(cols = c(rep(cols[i], pull(Es, cols[i]) - 2), "sv1", "sv2"), lags = c(0:-(p/;"	c
-anonVec9bbdf1f60306	R/analysis_exp.R	/^                pivot_longer(cols = c(-BR, -rho, -rec_sp), names_to = "don_sp", values_to = "sen/;"	c
-anonVec9bbdf1f60a06	R/analysis_exp.R	/^fig_02 <- (gp_02a + gp_02b + plot_layout(nrow = 1, width = c(2, 3))) & theme_st(just = c(0, 0), /;"	c
-anonVecba4d64ea0106	rpkg/R/func_ntsa.R	/^            matrix(c(s = min(tmp), e = max(tmp)), nrow = 1)$/;"	c	function:find_knot
+a1	R/analysis_exp.R	/^a1 <- dda_res %>% filter(rec_sp == "Cm" & don_sp == "Ac") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
+a2	R/analysis_exp.R	/^a2 <- dda_res %>% filter(rec_sp == "Cc" & don_sp == "Ac") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
+a3	R/analysis_exp.R	/^a3 <- dda_res %>% filter(rec_sp == "Cc" & don_sp == "Cm") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
+a4	R/analysis_exp.R	/^a4 <- dda_res %>% filter(rec_sp == "Cm" & don_sp == "Cc") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
+anonFunc14c481530103	R/analysis_fish.R	/^    }, error = function(e) {$/;"	f
+anonFunc36822f700104	rpkg/R/func_surrogate.R	/^    idx <- which(apply(dmat, 1, function(r) !all(is.na(r))))$/;"	v	function:find_twins
+anonFunc36822f700204	rpkg/R/func_surrogate.R	/^        probs <- lapply(twins, function(v) {rep(1 \/ length(v), length(v))})$/;"	v	functionVar:find_twins.twin_probs
+anonFunc699d2a0a0103	R/suppl_1.R	/^    }, error = function(e) {tibble(b12 = b12, p_noise = p_noise, o_noise = o_noise, indirect = N/;"	f
+anonFunc699d2e4b0103	R/suppl_2.R	/^    }, error = function(e) {$/;"	f
+anonFuncba4d64ea0104	rpkg/R/func_ntsa.R	/^        }, error = function(e) return(tibble(E = E, rho = NA, mae = NA, rmse = NA)))$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+anonFuncba4d64ea0204	rpkg/R/func_ntsa.R	/^    idx_all <- apply(dmat, 1, function(r) {sum(is.na(r)) != dim[1] - 1})$/;"	v	functionVar:gen_emat.smap_net
 b12	R/suppl_1.R	/^    b12 <- rnorm(1, 0.0, 0.2)$/;"	g
 beta	R/analysis_dlm.R	/^beta <- 1.0$/;"	g
-bwd	rpkg/R/func_ntsa.R	/^            bwd <- smplx(cols[i], E, -Tps[i])$/;"	v	function:gen_emat.find_best_dim
+bwd	rpkg/R/func_ntsa.R	/^            bwd <- smplx(cols[i], E, -Tps[i])$/;"	v	functionVar:gen_emat.find_best_dim
 bwd	rpkg/R/func_ntsa.R	/^        bwd <- tmp - lag(tmp)$/;"	v	function:find_knot
-byrow	R/analysis_dlm.R	/^               0.00,  0.00, 0.00), nrow = 3, byrow = TRUE)$/;"	n	vector:anonVec9ba538260106
-byrow	R/analysis_dlm.R	/^              0.10, 0.05, -r[3]), nrow = 3, byrow = TRUE)$/;"	n	vector:anonVec9ba538260206
-byrow	R/suppl_1.R	/^              0.8,  0.0), nrow = 2, byrow = TRUE)$/;"	n	vector:anonVec699d2a0a0106
 c_means	R/analysis_fish.R	/^        c_means <- coef %>% summarize(across(.cols = everything(), .fns = ~mean(.x, na.rm = TRUE/;"	g
 c_means	R/suppl_2.R	/^        c_means <- coef %>% summarize(across(.cols = everything(), .fns = ~mean(.x, na.rm = TRUE/;"	g
 c_sds	R/analysis_fish.R	/^        c_sds <- coef %>% summarize(across(.cols = everything(), .fns = ~sd(.x, na.rm = TRUE))) /;"	g
 c_sds	R/suppl_2.R	/^        c_sds <- coef %>% summarize(across(.cols = everything(), .fns = ~sd(.x, na.rm = TRUE))) /;"	g
-ccm_op	R/analysis_fish.R	/^ccm_op <- read_csv("data\/ccm_op.csv")$/;"	g
 ccm_op	R/analysis_fish.R	/^foreach(ref = cols, .combine = rbind) %:%$/;"	g
 ccm_op	R/suppl_2.R	/^ccm_op <- read_csv("data\/ccm_op.csv")$/;"	g
-ccm_r	R/analysis_fish.R	/^        ccm_r <- ccm_r %>% group_by(tar) %>% group_modify(~filter(., rho == max(rho))) %>% ungro/;"	g
 ccm_r	R/analysis_fish.R	/^    ccm_r <- ccm_op %>% filter(ref == rec & tar %in% cols) %>% filter(p_min <= 0.05 & p_sur <= 0/;"	g
-ccm_r	R/suppl_2.R	/^        ccm_r <- ccm_r %>% group_by(tar) %>% group_modify(~filter(., rho == max(rho))) %>% ungro/;"	g
 ccm_r	R/suppl_2.R	/^    ccm_r <- ccm_op %>% filter(ref == rec & tar %in% cols) %>% filter(p_min <= 0.05 & p_sur <= 0/;"	g
-ccm_test	rpkg/R/func_ntsa.R	/^ccm_test <- function(df, ref, tar, lib = matrix(c(1, nrow(df)), nrow = 1), E, Tp = 0,$/;"	f	function:gen_emat
-cl	R/analysis_fish.R	/^        cl <- makeCluster(detectCores(), type = "PSOCK")$/;"	g
+ccm_test	rpkg/R/func_ntsa.R	/^ccm_test <- function(df, ref, tar, lib = matrix(c(1, nrow(df)), nrow = 1), E, Tp = 0,$/;"	v	function:gen_emat
 cl	R/analysis_fish.R	/^cl <- makeCluster(detectCores(), type = "PSOCK")$/;"	g
 cl	R/suppl_2.R	/^        cl <- makeCluster(detectCores(), type = "PSOCK")$/;"	g
-cl	rpkg/R/func_ntsa.R	/^    cl <- makeCluster(threadNo, type = "PSOCK")$/;"	v	function:gen_emat.find_best_dim
-cl	rpkg/R/func_ntsa.R	/^    cl <- makeCluster(threadNo, type = "PSOCK")$/;"	v	function:gen_emat.smap_net
+cl	rpkg/R/func_ntsa.R	/^    cl <- makeCluster(threadNo, type = "PSOCK")$/;"	v	functionVar:gen_emat.find_best_dim
+cl	rpkg/R/func_ntsa.R	/^    cl <- makeCluster(threadNo, type = "PSOCK")$/;"	v	functionVar:gen_emat.smap_net
 cnames	R/analysis_exp.R	/^        cnames <- names(coef)[(ncol(emat) - 2):(ncol(emat) - 1)]$/;"	g
 cnames	R/analysis_fish.R	/^        cnames <- names(coef)[1:S]$/;"	g
-cnames	R/functions.R	/^    cnames <- c("time", str_c("x", 1:length(state)))$/;"	c	function:gen_dl_map
-cnames	R/functions.R	/^    cnames <- c("time", str_c("x", 1:length(state)))$/;"	c	function:gen_dl_model
-cnames	R/functions.R	/^    cnames <- c("time", str_c("x", 1:length(state)))$/;"	c	function:gen_pp_map
+cnames	R/functions.R	/^    cnames <- c("time", str_c("x", 1:length(state)))$/;"	v	function:gen_dl_map
+cnames	R/functions.R	/^    cnames <- c("time", str_c("x", 1:length(state)))$/;"	v	function:gen_dl_model
+cnames	R/functions.R	/^    cnames <- c("time", str_c("x", 1:length(state)))$/;"	v	function:gen_pp_map
 cnames	R/suppl_2.R	/^        cnames <- names(coef)[1:S]$/;"	g
-cnames	rpkg/R/func_ntsa.R	/^    cnames <- str_c("C", c(1:dim[2], 0))$/;"	v	function:gen_emat.smap_net
+cnames	rpkg/R/func_ntsa.R	/^    cnames <- str_c("C", c(1:dim[2], 0))$/;"	v	functionVar:gen_emat.smap_net
 coef	R/analysis_dlm.R	/^coef <- op1$coef[[1]]$/;"	g
 coef	R/analysis_exp.R	/^        coef <- op %>% pull(coef) %>% .[[1]]$/;"	g
-coef	R/analysis_exp.R	/^        coef <- read_csv(str_c("data\/coef_", br, "_", cols[i], "_", cols[-i][1], "_", cols[-i][/;"	g
 coef	R/analysis_fish.R	/^        coef <- op$coef[[1]]$/;"	g
 coef	R/suppl_2.R	/^        coef <- op$coef[[1]]$/;"	g
-coef	rpkg/R/func_ntsa.R	/^            coef <- coef %>% as.data.frame() %>% setNames(cnames) %>% as_tibble() %>% list()$/;"	v	function:gen_emat.smap_net.error
-coef	rpkg/R/func_ntsa.R	/^            coef <- matrix(NA, nrow = dim[1], ncol = dim[2] + 1)$/;"	v	function:gen_emat.smap_net
+coef	rpkg/R/func_ntsa.R	/^            coef <- coef %>% as.data.frame() %>% setNames(cnames) %>% as_tibble() %>% list()$/;"	v	functionVar:gen_emat.smap_net.error
+coef	rpkg/R/func_ntsa.R	/^            coef <- matrix(NA, nrow = dim[1], ncol = dim[2] + 1)$/;"	v	functionVar:gen_emat.smap_net
 coef_t	R/suppl_1.R	/^        coef_t <- df %>% filter(time > 50) %>% mutate(x1 = A[1, 2] * x1^b12) %>% pull(x1)$/;"	g
 col_alpha	R/suppl_2.R	/^col_alpha <- fish_sum %>% filter(Obs >= nrow(fish) * 0.5) %>% pull(Sp)$/;"	g
 col_beta	R/suppl_2.R	/^col_beta <- fish_sum %>% filter(Obs >= nrow(fish) * 0.4) %>% pull(Sp) %>% .[-(1:13)]$/;"	g
-cols	R/analysis_exp.R	/^cols <- c("Cm", "Cc", "Ac")$/;"	c
-cols	R/analysis_fish.R	/^cols <- read_csv("data\/fish_sum.csv") %>% filter(Obs >= 201 * 0.5) %>% pull(Sp)$/;"	g
+cols	R/analysis_exp.R	/^cols <- c("Cm", "Cc", "Ac")$/;"	g
 cols	R/analysis_fish.R	/^cols <- read_csv("data\/fish_sum.csv") %>% filter(Obs >= nrow(fish) \/ 3) %>% pull(Sp)$/;"	g
 cols	R/suppl_2.R	/^cols <- read_csv("data\/fish_sum.csv") %>% filter(Obs > 201 * 0.4) %>% pull(Sp)$/;"	g
-cols	R/suppl_2.R	/^cols <- read_csv("data\/fish_sum.csv") %>% filter(Obs >= 201 * 0.4) %>% pull(Sp)$/;"	g
-curr1	R/suppl_1.R	/^curr1 <- c(2, 2)$/;"	c
-curr2	R/suppl_1.R	/^curr2 <- c(-r[2] \/ A[2, 1], r[1] \/ (-A[1, 2] * (-r[2] \/ A[2, 1])^-0.25) + 0.03)$/;"	c
+curr1	R/suppl_1.R	/^curr1 <- c(2, 2)$/;"	g
+curr2	R/suppl_1.R	/^curr2 <- c(-r[2] \/ A[2, 1], r[1] \/ (-A[1, 2] * (-r[2] \/ A[2, 1])^-0.25) + 0.03)$/;"	g
 cv	R/analysis_fish.R	/^                cv <- coef %>% mutate(!!cnames[i] := pull(surr, cnames[i])) %>% as.matrix() %>% /;"	g
 cv	R/suppl_2.R	/^                cv <- coef %>% mutate(!!cnames[i] := pull(surr, cnames[i])) %>% as.matrix() %>% /;"	g
 cv_1	R/analysis_exp.R	/^            cv_1 <- coef %>% mutate(!!cnames[1] := pull(surr, cnames[1])) %>% as.matrix() %>% ge/;"	g
@@ -134,49 +106,39 @@ cv_o	R/analysis_exp.R	/^        cv_o <- coef %>% as.matrix() %>% get_pred(emat) 
 cv_o	R/analysis_fish.R	/^        cv_o <- coef %>% as.matrix() %>% get_pred(cbind(emat, 1)) %>% get_cv()$/;"	g
 cv_o	R/suppl_2.R	/^        cv_o <- coef %>% as.matrix() %>% get_pred(cbind(emat, 1)) %>% get_cv()$/;"	g
 cv_orig	R/analysis_dlm.R	/^cv_orig <- get_cv(get_pred(as.matrix(coef), cbind(emat, 1)))$/;"	g
-dbar	rpkg/R/func_ntsa.R	/^    dbar <- rowMeans(dmat[, idx_l], na.rm = TRUE)$/;"	v	function:gen_emat.smap_net
+dbar	rpkg/R/func_ntsa.R	/^    dbar <- rowMeans(dmat[, idx_l], na.rm = TRUE)$/;"	v	functionVar:gen_emat.smap_net
 dda_op	R/analysis_fish.R	/^dda_op <- read_csv("data\/dda_op_01.csv")$/;"	g
 dda_op	R/suppl_2.R	/^dda_op <- read_csv("data\/dda_op_02.csv")$/;"	g
 dda_res	R/analysis_exp.R	/^system.time(dda_res <- foreach(br = treat, .combine = rbind) %do% {$/;"	g
-dds_res	R/analysis_exp.R	/^dds_res <- read_csv("data\/dds_res.csv") %>% filter(rec_sp != "Ac") %>% $/;"	g
 dds_res	R/analysis_exp.R	/^system.time(dds_res <- foreach(br = treat, .combine = rbind) %do% {$/;"	g
 demo_1	R/analysis_dlm.R	/^demo_1 <- coef %>% mutate(x1 = lag(df_$x1)) %>% select(x1, C2, C3) %>% rename(C12 = C2, P13 = C3/;"	g
 demo_2	R/analysis_dlm.R	/^demo_2 <- df_ %>%$/;"	g
 demo_3	R/analysis_dlm.R	/^demo_3 <-foreach(rho = seq(0.0, 1.0, 0.1), .combine = rbind) %:% foreach(iter = 1:100, .combine /;"	g
 df	R/analysis_dlm.R	/^df <- gen_pp_map(rep(0.01, 3), len = 250, rc = rc, rp = rp, C = C, P = P, beta = beta)$/;"	g
 df	R/analysis_exp.R	/^df <- read_csv("data\/callosobruchus_3.csv")$/;"	g
-df	R/suppl_1.R	/^        df <- df %>% filter(time > 50)$/;"	g
 df	R/suppl_1.R	/^    df <- gen_dl_map(rep(0.01, size), 250, r = r, A = A, beta = b12, minTh = 0, maxTh = Inf, p_n/;"	g
 df1	R/suppl_1.R	/^df1 <- gen_dl_model(state = curr1, len = 7500, r = r, A = A, beta =  0.25, h = 0.01) %>% rename(/;"	g
 df2	R/suppl_1.R	/^df2 <- gen_dl_model(state = curr2, len = 7500, r = r, A = A, beta = -0.25, h = 0.01) %>% rename(/;"	g
 df_	R/analysis_dlm.R	/^df_ <- df %>% filter(time > 50)$/;"	g
-df_	R/analysis_exp.R	/^        df_ <- df_ %>% mutate(sv1 = !!sym(cols[i]) * lead(!!sym(cols[-i][1]), lgs[-i][1]), sv2 =/;"	g
 df_	R/analysis_exp.R	/^    df_ <- df %>% filter(BR == br & !is.na(Cm) & !is.na(Cc)) %>%$/;"	g
-df_	R/suppl_1.R	/^        df_ <- df %>% filter(time > 50) %>%$/;"	g
 df_	R/suppl_1.R	/^        df_ <- df %>% mutate(across(.cols = starts_with("x"), .fns = ~{.x * runif(length(.x), 1 /;"	g
-di	rpkg/R/func_surrogate.R	/^            di <- dmat[i, twins[i]]$/;"	v	function:twin_probs
-dim	rpkg/R/func_ntsa.R	/^    dim <- dim(X)$/;"	v	function:gen_emat.smap_net
+di	rpkg/R/func_surrogate.R	/^            di <- dmat[i, twins[i]]$/;"	v	functionVar:find_twins.twin_probs
+dim	rpkg/R/func_ntsa.R	/^    dim <- dim(X)$/;"	v	functionVar:gen_emat.smap_net
 dmat	R/suppl_1.R	/^        dmat <- NULL; # dmat <- df_ %>% get_mvd(cols = S, E = max(length(S), E), Tp = 1, lmax = /;"	g
-dmat	rpkg/R/func_ntsa.R	/^        dmat <- get_ned(X)$/;"	v	function:gen_emat.find_best_dim.smplx
-dmat	rpkg/R/func_ntsa.R	/^    dmat <- get_ned(X)$/;"	v	function:gen_emat.xmap
-dmat	rpkg/R/func_ntsa.R	/^    dmat <- get_ned(X);$/;"	v	function:gen_emat.smap_net
-dmat	rpkg/R/func_surrogate.R	/^    dmat <- get_ned(X)$/;"	v	function:gen_surr_ts
+dmat	rpkg/R/func_ntsa.R	/^        dmat <- get_ned(X)$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+dmat	rpkg/R/func_ntsa.R	/^    dmat <- get_ned(X)$/;"	v	functionVar:gen_emat.xmap
+dmat	rpkg/R/func_ntsa.R	/^    dmat <- get_ned(X);$/;"	v	functionVar:gen_emat.smap_net
+dmat	rpkg/R/func_surrogate.R	/^    dmat <- get_ned(X)$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
 dons	R/analysis_fish.R	/^        dons <- ccm_r %>% pull(tar)$/;"	g
 dons	R/suppl_2.R	/^        dons <- ccm_r %>% pull(tar)$/;"	g
-e	rpkg/R/func_ntsa.R	/^            matrix(c(s = min(tmp), e = max(tmp)), nrow = 1)$/;"	n	vector:find_knot.anonVecba4d64ea0106
 emat	R/analysis_dlm.R	/^emat <- df_ %>% gen_emat(cols = 2:4, lags = rep(0, 3))$/;"	g
 emat	R/analysis_exp.R	/^        emat <- df_ %>% gen_emat(cols = c(rep(cols[i], pull(Es, cols[i]) - 2), "sv1", "sv2"), la/;"	g
-emat	R/analysis_exp.R	/^        emat <- df_ %>%$/;"	g
 emat	R/analysis_fish.R	/^                emat <- fish %>% gen_emat(cols = rep(sp, E), lags = 0:-(E - 1))$/;"	g
-emat	R/analysis_fish.R	/^        emat <- fish %>% gen_emat(cols = c(dons, rep(rec, max(1, E - S))), lags = c(pull(ccm_r, /;"	g
 emat	R/suppl_1.R	/^        emat <- df_ %>% gen_emat(cols = S, lags = rep(0, length(S)))$/;"	g
-emat	R/suppl_1.R	/^        if (E > length(S)) emat <- emat %>% cbind(gen_emat(df_, cols = rep("x1", E - length(S) +/;"	g
-emat	R/suppl_1.R	/^        if (E > length(S)) emat <- foreach(i = 1:(E - length(S)), .combine = cbind, .init = emat/;"	g
 emat	R/suppl_2.R	/^        emat <- fish %>% gen_emat(cols = c(dons, rep(rec, max(1, E - S))), lags = c(pull(ccm_r, /;"	g
 emat	rpkg/R/func_ntsa.R	/^    emat <- matrix(NA, nrow = max(knot) - min(knot) + 1, ncol = length(cols))$/;"	v	function:gen_emat
 error	R/analysis_fish.R	/^        }, error = function(e) tibble(ref = ref, tar = tar, E = E, Tp = Tp, rho = NA, mae = NA, /;"	f
-error	R/suppl_1.R	/^    }, error = function(e) {tibble(b12 = b12, p_noise = p_noise, o_noise = o_noise, indirect = N/;"	f
-error	rpkg/R/func_ntsa.R	/^        }, error = function(e) {$/;"	f	function:gen_emat.smap_net
+error	rpkg/R/func_ntsa.R	/^        }, error = function(e) {$/;"	v	functionVar:gen_emat.smap_net
 fig_01	R/analysis_dlm.R	/^fig_01 <- (((gp_01a + plot_spacer() + plot_layout(ncol = 1, height = c(2, 1))) | gp_01b) \/ (gp_/;"	g
 fig_02	R/analysis_exp.R	/^fig_02 <- (gp_02a + gp_02b + plot_layout(nrow = 1, width = c(2, 3))) & theme_st(just = c(0, 0), /;"	g
 fig_03	R/analysis_fish.R	/^fig_03 <- ({(gp_03a | gp_03b) \/ gp_03c} + plot_layout(height = c(4, 3))) & theme_st()$/;"	g
@@ -184,29 +146,26 @@ fig_S1	R/suppl_1.R	/^fig_S1 <- (gp_S1a + gp_S1b + plot_layout(nrow = 1, width = 
 fig_S2	R/suppl_1.R	/^fig_S2 <- gp_S2a \/ gp_S2b$/;"	g
 fig_S3	R/suppl_2.R	/^fig_S3 <- (gp_S3a + gp_S3b + plot_layout(ncol = 1, height = c(5, 2))) & theme_st()$/;"	g
 fig_S4	R/suppl_2.R	/^fig_S4 <- ({(gp_S4a | gp_S4b) \/ gp_S4c} + plot_layout(height = c(4, 3))) & theme_st()$/;"	g
-find_best_dim	rpkg/R/func_ntsa.R	/^find_best_dim <- function(df, cols, lib = matrix(c(1, nrow(df)), nrow = 1), pred = NULL, range =/;"	f	function:gen_emat
+find_best_dim	rpkg/R/func_ntsa.R	/^find_best_dim <- function(df, cols, lib = matrix(c(1, nrow(df)), nrow = 1), pred = NULL, range =/;"	v	function:gen_emat
 find_knot	rpkg/R/func_ntsa.R	/^find_knot <- function(df, key_col = NULL, time_col = 1, diff = 1) {$/;"	f
 find_twins	rpkg/R/func_surrogate.R	/^find_twins <- function(dmat, twin_op = "RM", time_idx, phase_lock = TRUE,$/;"	f
-fish	R/analysis_fish.R	/^fish <- fish %>% mutate(across(.cols = all_of(cols), .fns = normalize))$/;"	g
 fish	R/analysis_fish.R	/^fish <- fish_orig %>%$/;"	g
-fish	R/suppl_2.R	/^fish <- fish %>% mutate(across(.cols = all_of(cols), .fns = ~normalize(.x, method = "0-1")))$/;"	g
-fish	R/suppl_2.R	/^fish <- fish %>% mutate(time = 1:nrow(.), across(.cols = all_of(c(col_alpha, col_beta)), .fns = /;"	g
 fish	R/suppl_2.R	/^fish <- fish_orig %>%$/;"	g
 fish_orig	R/analysis_fish.R	/^fish_orig <- read_csv("data\/maiduru_obs.csv")$/;"	g
 fish_orig	R/suppl_2.R	/^fish_orig <- read_csv("data\/maiduru_obs.csv")$/;"	g
 fish_sum	R/analysis_fish.R	/^fish_sum <- fish %>% select(-year, -month) %>%$/;"	g
 fish_sum	R/suppl_2.R	/^fish_sum <- read_csv("data\/fish_sum.csv")$/;"	g
-fit	rpkg/R/func_ntsa.R	/^                fit <- cv.glmnet(x = X[idx_l, ], y = y[idx_l], weights = wmat[t, idx_l], lambda /;"	v	function:gen_emat.smap_net
-fun	R/functions.R	/^    fun <- function(x) {$/;"	f	function:gen_dl_model
-func_smplx	rpkg/R/func_ntsa.R	/^func_smplx <- function(X, y, dmat, idx_l, idx_p, nns) Smplx(X, y, dmat, idx_l, idx_p, nns);$/;"	f	function:gen_emat
+fit	rpkg/R/func_ntsa.R	/^                fit <- cv.glmnet(x = X[idx_l, ], y = y[idx_l], weights = wmat[t, idx_l], lambda /;"	v	functionVar:gen_emat.smap_net
+fun	R/functions.R	/^    fun <- function(x) {$/;"	v	function:gen_dl_model
+func_smplx	rpkg/R/func_ntsa.R	/^func_smplx <- function(X, y, dmat, idx_l, idx_p, nns) Smplx(X, y, dmat, idx_l, idx_p, nns);$/;"	v	function:gen_emat
 fwd	rpkg/R/func_ntsa.R	/^        fwd <- lead(tmp) - tmp$/;"	v	function:find_knot
-fwd	rpkg/R/func_ntsa.R	/^        fwd <- smplx(cols[i], E, Tps[i])$/;"	v	function:gen_emat.find_best_dim
+fwd	rpkg/R/func_ntsa.R	/^        fwd <- smplx(cols[i], E, Tps[i])$/;"	v	functionVar:gen_emat.find_best_dim
 gen_dl_map	R/functions.R	/^gen_dl_map <- function(state, len, r, A, beta, minTh, maxTh, p_noise) {$/;"	f
 gen_dl_model	R/functions.R	/^gen_dl_model <- function(state, len, r, A, beta, h = 0.01) {$/;"	f
 gen_emat	rpkg/R/func_ntsa.R	/^gen_emat <- function(df, cols, lags, knot = matrix(c(1, nrow(df)), nrow = 1)) {$/;"	f
 gen_pp_map	R/functions.R	/^gen_pp_map <- function(state, len, rc, rp, C, P, beta) {$/;"	f
 gen_rec_mat	rpkg/R/func_surrogate.R	/^gen_rec_mat <- function(dmat, s = 0.100) {$/;"	f
-gen_surr_ts	rpkg/R/func_surrogate.R	/^gen_surr_ts <- function(X, col, knot = matrix(c(1, nrow(X)), nrow = 1), iter = 100, seed = NULL,$/;"	f
+gen_surr_ts	rpkg/R/func_surrogate.R	/^gen_surr_ts <- function(X, col, knot = matrix(c(1, nrow(X)), nrow = 1), iter = 100, seed = NULL,$/;"	v	functionVar:find_twins.twin_probs
 gen_valid_idx	rpkg/R/func_ntsa.R	/^gen_valid_idx <- function(knot, idx_all) {$/;"	f
 getMAE	rpkg/R/RcppExports.R	/^getMAE <- function(v1, v2) {$/;"	f
 getMAE	rpkg/src/func_cpp.cpp	/^double getMAE(const Eigen::VectorXd& v1, const Eigen::VectorXd& v2) {$/;"	f	typeref:typename:double
@@ -234,7 +193,6 @@ gp_02a	R/analysis_exp.R	/^gp_02a <- read_csv("data\/dda_res.csv") %>% filter(rec
 gp_02b	R/analysis_exp.R	/^gp_02b <- read_csv("data\/dds_res.csv") %>%$/;"	g
 gp_03a	R/analysis_fish.R	/^gp_03a <- dda_op %>% mutate(rec = factor(rec, levels = rev(cols)), don = factor(don, levels = co/;"	g
 gp_03b	R/analysis_fish.R	/^gp_03b <- dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +$/;"	g
-gp_03b	R/analysis_fish.R	/^gp_03b <- gp_03b + annotation_custom(ggplotGrob(tmp), xmin = 0.6, xmax = 1.5, ymin = 0.1, ymax =/;"	g
 gp_03c	R/analysis_fish.R	/^gp_03c <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>%$/;"	g
 gp_S1a	R/suppl_1.R	/^gp_S1a <- df1 %>% pivot_longer(-time, names_to = "species", values_to = "density") %>%$/;"	g
 gp_S1b	R/suppl_1.R	/^gp_S1b <- tibble(V = seq(0, 5, 0.01), A12 = -1.4 * V^0.25) %>% ggplot(aes(x = V, y = A12)) +$/;"	g
@@ -246,107 +204,83 @@ gp_S3a	R/suppl_2.R	/^gp_S3a <- fish %>% select(all_of(c("time", col_alpha))) %>%
 gp_S3b	R/suppl_2.R	/^gp_S3b <- fish %>% select(all_of(c("time", col_beta))) %>%$/;"	g
 gp_S4a	R/suppl_2.R	/^gp_S4a <- dda_op %>% mutate(rec = factor(rec, levels = rev(cols)), don = factor(don, levels = co/;"	g
 gp_S4b	R/suppl_2.R	/^gp_S4b <-  dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +$/;"	g
-gp_S4b	R/suppl_2.R	/^gp_S4b <- gp_S4b + annotation_custom(ggplotGrob(tmp), xmin = 0.6, xmax = 1.5, ymin = 0.1, ymax =/;"	g
 gp_S4c	R/suppl_2.R	/^gp_S4c <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(sensitivity <= 1e+3) %>%$/;"	g
-guide	R/analysis_dlm.R	/^    scale_shape_manual(values = c(21, 25, 24), guide = "none") +$/;"	n	vector:anonVec9ba538260a06
-guide	R/analysis_fish.R	/^    scale_color_manual(values = c(RColorBrewer::brewer.pal(3, "Set1")[1:2], "grey25"), guide = "/;"	n	vector:anonVec14c481530706
-guide	R/suppl_2.R	/^    scale_color_manual(values = c(RColorBrewer::brewer.pal(3, "Set1")[1:2], "grey25"), guide = "/;"	n	vector:anonVec699d2e4b0a06
 i	rpkg/R/func_ntsa.R	/^    for (i in 1:nrow(knot)) {$/;"	v	function:gen_emat
 i	rpkg/R/func_surrogate.R	/^            for (i in idx) {$/;"	v	function:find_twins
-ids	rpkg/R/func_surrogate.R	/^                ids <- sample(which((time_idx - time_idx[knot[i, 1]]) %% period == 0), 1)$/;"	v	function:gen_surr_ts
+ids	rpkg/R/func_surrogate.R	/^                ids <- sample(which((time_idx - time_idx[knot[i, 1]]) %% period == 0), 1)$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
 idx	rpkg/R/func_common.R	/^    idx <- complete.cases(cbind(x, y))$/;"	v	function:get_mae
 idx	rpkg/R/func_common.R	/^    idx <- complete.cases(cbind(x, y))$/;"	v	function:get_rho
 idx	rpkg/R/func_common.R	/^    idx <- complete.cases(cbind(x, y))$/;"	v	function:get_rmse
 idx	rpkg/R/func_ntsa.R	/^        idx <- knot[i, 1]:knot[i, 2]$/;"	v	function:gen_emat
-idx	rpkg/R/func_ntsa.R	/^    idx <- cbind(y, X) %>% complete.cases() %>% which()$/;"	v	function:gen_emat.xmap
-idx	rpkg/R/func_surrogate.R	/^    idx <- X %>% complete.cases() %>% which()$/;"	v	function:gen_surr_ts
+idx	rpkg/R/func_ntsa.R	/^    idx <- cbind(y, X) %>% complete.cases() %>% which()$/;"	v	functionVar:gen_emat.xmap
+idx	rpkg/R/func_surrogate.R	/^    idx <- X %>% complete.cases() %>% which()$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
 idx	rpkg/R/func_surrogate.R	/^    idx <- which(apply(dmat, 1, function(r) !all(is.na(r))))$/;"	v	function:find_twins
-idx_all	rpkg/R/func_ntsa.R	/^        idx_all <- cbind(y, X) %>% complete.cases() %>% which()$/;"	v	function:gen_emat.find_best_dim.smplx
-idx_all	rpkg/R/func_ntsa.R	/^    idx_all <- apply(dmat, 1, function(r) {sum(is.na(r)) != dim[1] - 1})$/;"	v	function:gen_emat.smap_net
-idx_i	rpkg/R/func_ntsa.R	/^            idx_i <- sample(idx, libSize, replace = replace)$/;"	v	function:gen_emat.xmap
-idx_l	rpkg/R/func_ntsa.R	/^        idx_l <- gen_valid_idx(lib, idx_all)$/;"	v	function:gen_emat.find_best_dim.smplx
-idx_l	rpkg/R/func_ntsa.R	/^    idx_l <- gen_valid_idx(lib, idx_all)$/;"	v	function:gen_emat.smap_net
-idx_p	rpkg/R/func_ntsa.R	/^        idx_p <- gen_valid_idx(pred, idx_all)$/;"	v	function:gen_emat.find_best_dim.smplx
-idx_p	rpkg/R/func_ntsa.R	/^    idx_p <- gen_valid_idx(pred, idx_all)$/;"	v	function:gen_emat.smap_net
+idx_all	rpkg/R/func_ntsa.R	/^        idx_all <- cbind(y, X) %>% complete.cases() %>% which()$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+idx_all	rpkg/R/func_ntsa.R	/^    idx_all <- apply(dmat, 1, function(r) {sum(is.na(r)) != dim[1] - 1})$/;"	v	functionVar:gen_emat.smap_net
+idx_i	rpkg/R/func_ntsa.R	/^            idx_i <- sample(idx, libSize, replace = replace)$/;"	v	functionVar:gen_emat.xmap
+idx_l	rpkg/R/func_ntsa.R	/^        idx_l <- gen_valid_idx(lib, idx_all)$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+idx_l	rpkg/R/func_ntsa.R	/^    idx_l <- gen_valid_idx(lib, idx_all)$/;"	v	functionVar:gen_emat.smap_net
+idx_p	rpkg/R/func_ntsa.R	/^        idx_p <- gen_valid_idx(pred, idx_all)$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+idx_p	rpkg/R/func_ntsa.R	/^    idx_p <- gen_valid_idx(pred, idx_all)$/;"	v	functionVar:gen_emat.smap_net
 iter	R/analysis_exp.R	/^iter <- 100$/;"	g
 iter	R/analysis_fish.R	/^iter <- 100$/;"	g
 iter	R/suppl_2.R	/^iter <- 100$/;"	g
 j	rpkg/R/func_ntsa.R	/^        for (j in 1:length(cols)) {$/;"	v	function:gen_emat
 j	rpkg/R/func_surrogate.R	/^                for (j in idx) if (all(rmat[i, ] == rmat[j, ], na.rm = TRUE)) tmp <- c(tmp, j)$/;"	v	function:find_twins
-k	rpkg/R/func_surrogate.R	/^            for (k in 2:(knot[i, 2] - knot[i, 1] + 1)) ids <- c(ids, point_nex(ids[k - 1], twins/;"	v	function:gen_surr_ts
+k	rpkg/R/func_surrogate.R	/^            for (k in 2:(knot[i, 2] - knot[i, 1] + 1)) ids <- c(ids, point_nex(ids[k - 1], twins/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
 k1	R/functions.R	/^        k1 <- h * fun(state)$/;"	v	function:gen_dl_model
 k2	R/functions.R	/^        k2 <- h * fun(state + k1 \/ 2)$/;"	v	function:gen_dl_model
 k3	R/functions.R	/^        k3 <- h * fun(state + k2 \/ 2)$/;"	v	function:gen_dl_model
 k4	R/functions.R	/^        k4 <- h * fun(state + k3)$/;"	v	function:gen_dl_model
-knot	R/analysis_exp.R	/^        emat <- df_ %>% gen_emat(cols = c(rep(cols[i], pull(Es, cols[i]) - 2), "sv1", "sv2"), la/;"	n	nameattr:anonVec9bbdf1f60106.lags
 knot	rpkg/R/func_ntsa.R	/^        knot <- cbind(s = which(is.na(bwd) | bwd != diff), e = which(is.na(fwd) | fwd != diff))$/;"	v	function:find_knot
-knot	rpkg/R/func_ntsa.R	/^        knot <- lib$/;"	v	function:gen_emat.find_best_dim
-knot	rpkg/R/func_ntsa.R	/^        knot <- lib$/;"	v	function:gen_emat.smap_net
+knot	rpkg/R/func_ntsa.R	/^        knot <- lib$/;"	v	functionVar:gen_emat.find_best_dim
+knot	rpkg/R/func_ntsa.R	/^        knot <- lib$/;"	v	functionVar:gen_emat.smap_net
 labC	R/analysis_dlm.R	/^labC <- expression(italic(C)[12])$/;"	g
 labP	R/analysis_dlm.R	/^labP <- expression(italic(P)[13])$/;"	g
-lags	R/analysis_exp.R	/^            gen_emat(cols = c(rep(cols[i], pull(Es, cols[i]) - 2), "sv1", "sv2"), lags = c(0:-(p/;"	n	vector:anonVec9bbdf1f60206	constructor:c
-lags	R/analysis_exp.R	/^        emat <- df_ %>% gen_emat(cols = c(rep(cols[i], pull(Es, cols[i]) - 2), "sv1", "sv2"), la/;"	n	vector:anonVec9bbdf1f60106	constructor:c
-lags	R/analysis_fish.R	/^        emat <- fish %>% gen_emat(cols = c(dons, rep(rec, max(1, E - S))), lags = c(pull(ccm_r, /;"	n	vector:anonVec14c481530206	constructor:c
-lags	R/suppl_2.R	/^        emat <- fish %>% gen_emat(cols = c(dons, rep(rec, max(1, E - S))), lags = c(pull(ccm_r, /;"	n	vector:anonVec699d2e4b0506	constructor:c
-lgs	R/analysis_exp.R	/^lgs <- c(0, 0, 3)$/;"	c
+lgs	R/analysis_exp.R	/^lgs <- c(0, 0, 3)$/;"	g
 lib	R/analysis_exp.R	/^    lib <- df_ %>% find_knot(time_col = "Weeks")$/;"	g
-max_op	rpkg/R/func_ntsa.R	/^    max_op <- xmap(df, ref, tar, lib, E, Tp, randomLibs = FALSE) %>% mutate(data = "max")$/;"	v	function:gen_emat.ccm_test
+max_op	rpkg/R/func_ntsa.R	/^    max_op <- xmap(df, ref, tar, lib, E, Tp, randomLibs = FALSE) %>% mutate(data = "max")$/;"	v	functionVar:gen_emat.ccm_test
 mcol	R/analysis_dlm.R	/^mcol <- RColorBrewer::brewer.pal(3, "Set2")[c(1, 2)]$/;"	g
-min_op	rpkg/R/func_ntsa.R	/^    min_op <- xmap(df, ref, tar, lib, E, Tp, libSize = libMin, numSamples = numSamples) %>% muta/;"	v	function:gen_emat.ccm_test
+min_op	rpkg/R/func_ntsa.R	/^    min_op <- xmap(df, ref, tar, lib, E, Tp, libSize = libMin, numSamples = numSamples) %>% muta/;"	v	functionVar:gen_emat.ccm_test
 mu	R/functions.R	/^    mu <- mean(C_hat, na.rm = TRUE)$/;"	v	function:shuffle_coef
 mytheme	R/functions.R	/^        theme_light() +$/;"	v	function:theme_st
-names_to	R/analysis_dlm.R	/^    pivot_longer(-c(time, original), names_to = "shuffle", values_to = "prediction") %>%$/;"	n	vector:anonVec9ba538260306
-names_to	R/analysis_exp.R	/^                pivot_longer(cols = c(-BR, -rho, -rec_sp), names_to = "don_sp", values_to = "sen/;"	n	vector:anonVec9bbdf1f60306
-names_to	R/suppl_1.R	/^    pivot_longer(cols = c(4, 5), names_to = "method", values_to = "coef") %>%$/;"	n	vector:anonVec699d2a0a0806
-names_to	R/suppl_1.R	/^    ungroup() %>% pivot_longer(cols = c(direct, indirect), names_to = "method", values_to = "RMS/;"	n	vector:anonVec699d2a0a0906
 nex	R/functions.R	/^        nex <- as.numeric((rc + C %*% state) * state)$/;"	v	function:gen_pp_map
-nex	rpkg/R/func_surrogate.R	/^        nex <- sample(x = twins[[curr]], size = 1, prob = probs[[curr]])$/;"	v	function:point_nex
+nex	rpkg/R/func_surrogate.R	/^        nex <- sample(x = twins[[curr]], size = 1, prob = probs[[curr]])$/;"	v	functionVar:find_twins.twin_probs.point_nex
 normalize	rpkg/R/func_common.R	/^normalize <- function(x, method = "0-1") {$/;"	f
-nrow	R/analysis_dlm.R	/^               0.00,  0.00, 0.00), nrow = 3, byrow = TRUE)$/;"	n	vector:anonVec9ba538260106
-nrow	R/analysis_dlm.R	/^              0.10, 0.05, -r[3]), nrow = 3, byrow = TRUE)$/;"	n	vector:anonVec9ba538260206
-nrow	R/suppl_1.R	/^              0.8,  0.0), nrow = 2, byrow = TRUE)$/;"	n	vector:anonVec699d2a0a0106
-nrow	rpkg/R/func_ntsa.R	/^            matrix(c(s = min(tmp), e = max(tmp)), nrow = 1)$/;"	n	vector:find_knot.anonVecba4d64ea0106
-o_noise	R/suppl_1.R	/^    o_noise <- params$o_noise[i]$/;"	g
 o_noise	R/suppl_1.R	/^o_noise <- 0.00$/;"	g
 op	R/analysis_exp.R	/^        op <- emat %>% smap_net(lib = lib, Tp = Tps[i], range = seq(0, 10, 1), seed = seed, alph/;"	g
 op	R/analysis_fish.R	/^            system.time(op <- fish %>% ccm_test(E = E, Tp = Tp, ref = ref, tar = tar, surr = sur/;"	g
-op	R/analysis_fish.R	/^        op <- emat %>% smap_net(Tp = 1, range = seq(0, 20, 1), s = "lambda.min", seed = seed, al/;"	g
 op	R/suppl_2.R	/^        op <- emat %>% smap_net(Tp = 1, range = seq(0, 20, 1), s = "lambda.min", seed = seed, al/;"	g
-op	rpkg/R/func_ntsa.R	/^        op <- foreach(i = 1:numSamples, .combine = rbind) %do% {$/;"	v	function:gen_emat.xmap
-op	rpkg/R/func_ntsa.R	/^    op <- foreach(i = 1:length(cols), .combine = rbind) %:% foreach(E = range, .combine = rbind)/;"	v	function:gen_emat.find_best_dim
-op	rpkg/R/func_ntsa.R	/^    op <- foreach(theta = range, .combine = rbind) %dopar% {$/;"	v	function:gen_emat.smap_net
-op	rpkg/R/func_ntsa.R	/^    op <- rbind(max_op, min_op) %>% select(ref, tar, E, Tp, data, rho, mae, rmse)$/;"	v	function:gen_emat.ccm_test
+op	rpkg/R/func_ntsa.R	/^        op <- foreach(i = 1:numSamples, .combine = rbind) %do% {$/;"	v	functionVar:gen_emat.xmap
+op	rpkg/R/func_ntsa.R	/^    op <- foreach(i = 1:length(cols), .combine = rbind) %:% foreach(E = range, .combine = rbind)/;"	v	functionVar:gen_emat.find_best_dim
+op	rpkg/R/func_ntsa.R	/^    op <- foreach(theta = range, .combine = rbind) %dopar% {$/;"	v	functionVar:gen_emat.smap_net
+op	rpkg/R/func_ntsa.R	/^    op <- rbind(max_op, min_op) %>% select(ref, tar, E, Tp, data, rho, mae, rmse)$/;"	v	functionVar:gen_emat.ccm_test
 op1	R/analysis_dlm.R	/^system.time(op1 <- smap_net(emat, range = seq(16, 18, 0.1), s = "lambda.min", alpha = 0.05))$/;"	g
-op1	R/suppl_1.R	/^        op1 <- smap_net(emat = emat, Tp = 1, range = seq(0, 50, 1), seed = seeds[i]) %>% pull(co/;"	g
 op1	R/suppl_1.R	/^        op1 <- smap_net(emat = emat, Tp = 1, range = seq(10, 40, 0.2), dmat = dmat, seed = seed)$/;"	g
 op2	R/suppl_1.R	/^        op2 <- find_best_theta(emat = emat, iterLim = 100, tsLength = 100, gSeed = seed, sigma =/;"	g
-op2	R/suppl_1.R	/^        op2 <- smap_net(emat = emat, Tp = 1, range = seq(0, 50, 1), seed = seeds[i]) %>% pull(co/;"	g
 op_dda	R/analysis_fish.R	/^        op_dda <- foreach(i = 1:S, .combine = rbind) %do% {$/;"	g
-op_dda	R/analysis_fish.R	/^        op_dda <- tibble(rec = rec, theta = NA, rho = NA, don = cols[cols != rec], c_mean = NA, /;"	v	function:anonFunc14c481530500
+op_dda	R/analysis_fish.R	/^        op_dda <- tibble(rec = rec, theta = NA, rho = NA, don = cols[cols != rec], c_mean = NA, /;"	v	function:anonFunc14c481530103
 op_dda	R/suppl_2.R	/^        op_dda <- foreach(i = 1:S, .combine = rbind) %do% {$/;"	g
-op_dda	R/suppl_2.R	/^        op_dda <- tibble(rec = rec, theta = NA, rho = NA, don = cols[cols != rec], c_mean = NA, /;"	v	function:anonFunc699d2e4b0800
+op_dda	R/suppl_2.R	/^        op_dda <- tibble(rec = rec, theta = NA, rho = NA, don = cols[cols != rec], c_mean = NA, /;"	v	function:anonFunc699d2e4b0103
 op_max	R/analysis_fish.R	/^            op_max <- op %>% filter(data == "max")$/;"	g
 op_sim	R/analysis_fish.R	/^        op_sim <- foreach(rho = rhos, .combine = rbind) %:%$/;"	g
-op_sim	R/analysis_fish.R	/^        op_sim <- tibble(rec = rec, don = cols[cols != rec], rho = NA, sensitivity = NA)$/;"	v	function:anonFunc14c481530500
+op_sim	R/analysis_fish.R	/^        op_sim <- tibble(rec = rec, don = cols[cols != rec], rho = NA, sensitivity = NA)$/;"	v	function:anonFunc14c481530103
 op_sim	R/suppl_2.R	/^        op_sim <- foreach(rho = rhos, .combine = rbind) %:%$/;"	g
-op_sim	R/suppl_2.R	/^        op_sim <- tibble(rec = rec, don = cols[cols != rec], rho = NA, sensitivity = NA)$/;"	v	function:anonFunc699d2e4b0800
-output	rpkg/R/func_ntsa.R	/^            output <- tibble(obs = as.numeric(y), pred = NA) %>% list()$/;"	v	function:gen_emat.smap_net.error
-output	rpkg/R/func_ntsa.R	/^            output <- tibble(obs = as.numeric(y), pred = y_) %>% list()$/;"	v	function:gen_emat.smap_net
+op_sim	R/suppl_2.R	/^        op_sim <- tibble(rec = rec, don = cols[cols != rec], rho = NA, sensitivity = NA)$/;"	v	function:anonFunc699d2e4b0103
+output	rpkg/R/func_ntsa.R	/^            output <- tibble(obs = as.numeric(y), pred = NA) %>% list()$/;"	v	functionVar:gen_emat.smap_net.error
+output	rpkg/R/func_ntsa.R	/^            output <- tibble(obs = as.numeric(y), pred = y_) %>% list()$/;"	v	functionVar:gen_emat.smap_net
 p_min	R/analysis_fish.R	/^            p_min <- op %>% filter(data == "min") %>% summarize(p = sum(op_max$rmse >= rmse) \/ /;"	g
-p_noise	R/suppl_1.R	/^    p_noise <- params$p_noise[i]$/;"	g
 p_noise	R/suppl_1.R	/^p_noise <- 0.00$/;"	g
 p_sur	R/analysis_fish.R	/^            p_sur <- op %>% filter(data == "surr") %>% summarize(p = sum(op_max$rmse >= rmse) \//;"	g
 params	R/suppl_1.R	/^params <- expand.grid(iter = 1:100, o_noise = seq(0.001, 0.051, length = 21), p_noise = seq(0.00/;"	g
-point_nex	rpkg/R/func_surrogate.R	/^point_nex <- function(curr, twins, knot, probs) {$/;"	f
-pos	R/analysis_exp.R	/^fig_02 <- (gp_02a + gp_02b + plot_layout(nrow = 1, width = c(2, 3))) & theme_st(just = c(0, 0), /;"	n	vector:anonVec9bbdf1f60a06	constructor:c
-probs	rpkg/R/func_surrogate.R	/^        probs <- twin_probs(twins, dmat, theta = theta, twin_op = "NN")$/;"	v	function:gen_surr_ts
-probs	rpkg/R/func_surrogate.R	/^    probs <- NULL$/;"	v	function:twin_probs
+point_nex	rpkg/R/func_surrogate.R	/^point_nex <- function(curr, twins, knot, probs) {$/;"	v	functionVar:find_twins.twin_probs
+probs	rpkg/R/func_surrogate.R	/^        probs <- twin_probs(twins, dmat, theta = theta, twin_op = "NN")$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
+probs	rpkg/R/func_surrogate.R	/^    probs <- NULL$/;"	v	functionVar:find_twins.twin_probs
 prop	R/suppl_1.R	/^prop <- 0.5$/;"	g
-r	R/analysis_dlm.R	/^r <- c(3.65, 3.72, 3.58)$/;"	c
-r	R/suppl_1.R	/^    r <- rnorm(size, 3.65, 0.05)$/;"	g
-r	R/suppl_1.R	/^r <- c(0.5, -1.5)$/;"	c
+r	R/analysis_dlm.R	/^r <- c(3.65, 3.72, 3.58)$/;"	g
+r	R/suppl_1.R	/^r <- c(0.5, -1.5)$/;"	g
 rad	rpkg/R/func_surrogate.R	/^    rad <- quantile(dmat, probs = s, na.rm = TRUE)$/;"	v	function:gen_rec_mat
-rc	R/analysis_dlm.R	/^rc <- c(r[1], r[2], 1.00)$/;"	c
+rc	R/analysis_dlm.R	/^rc <- c(r[1], r[2], 1.00)$/;"	g
 res	rpkg/R/func_common.R	/^    res <- ifelse(any(idx), getMAE(x[idx], y[idx]), NA)$/;"	v	function:get_mae
 res	rpkg/R/func_common.R	/^    res <- ifelse(any(idx), getRMSE(x[idx], y[idx]), NA)$/;"	v	function:get_rmse
 res	rpkg/R/func_common.R	/^    res <- ifelse(any(idx), getRho(x[idx], y[idx]), NA)$/;"	v	function:get_rho
@@ -354,49 +288,39 @@ rhos	R/analysis_exp.R	/^rhos <- seq(0.09, 1, 0.1)$/;"	g
 rhos	R/analysis_fish.R	/^rhos <- seq(0.09, 1, 0.1)$/;"	g
 rhos	R/suppl_2.R	/^rhos <- seq(0.09, 1, 0.1)$/;"	g
 rmat	rpkg/R/func_surrogate.R	/^            rmat <- gen_rec_mat(dmat, s = s)$/;"	v	function:find_twins
-rp	R/analysis_dlm.R	/^rp <- c(1.00, 1.00, r[3])$/;"	c
+rp	R/analysis_dlm.R	/^rp <- c(1.00, 1.00, r[3])$/;"	g
 s	R/analysis_exp.R	/^            s <- seeds[iter * (which(rhos == rho) - 1) + j]$/;"	g
 s	R/analysis_fish.R	/^            s <- seeds[iter * (which(rhos == rho) - 1) + j]$/;"	g
 s	R/suppl_2.R	/^            s <- seeds[iter * (which(rhos == rho) - 1) + j]$/;"	g
-s	rpkg/R/func_ntsa.R	/^            matrix(c(s = min(tmp), e = max(tmp)), nrow = 1)$/;"	n	vector:find_knot.anonVecba4d64ea0106
 s	rpkg/R/func_surrogate.R	/^        for (s in range) {$/;"	v	function:find_twins
 seed	R/analysis_exp.R	/^seed <- 123$/;"	g
 seed	R/analysis_fish.R	/^seed <- 123$/;"	g
 seed	R/suppl_1.R	/^seed <- 333$/;"	g
 seed	R/suppl_2.R	/^seed <- 123$/;"	g
 seeds	R/analysis_exp.R	/^seeds <- sample(32768, iter * length(rhos), replace = TRUE)$/;"	g
-seeds	R/analysis_fish.R	/^seeds <- sample(32768, iter * length(rhos), replace = TRUE)$/;"	g
 seeds	R/analysis_fish.R	/^seeds <- sample(32768, length(cols), replace = TRUE)$/;"	g
 seeds	R/suppl_1.R	/^seeds <- sample(32768, nrow(params), replace = TRUE)$/;"	g
 seeds	R/suppl_2.R	/^seeds <- sample(32768, iter * length(rhos), replace = TRUE)$/;"	g
-seeds	rpkg/R/func_ntsa.R	/^    seeds <- sample(32768, dim[1], replace = TRUE)$/;"	v	function:gen_emat.smap_net
+seeds	rpkg/R/func_ntsa.R	/^    seeds <- sample(32768, dim[1], replace = TRUE)$/;"	v	functionVar:gen_emat.smap_net
 shift	rpkg/R/func_common.R	/^shift <- function(v, lag) do.call(if_else(lag < 0, "lag", "lead"), args = list(v, abs(lag)));$/;"	f
 shuffle_coef	R/functions.R	/^shuffle_coef <- function(C_orig, dens, rho, sigma = NULL, seed = NULL) {$/;"	f
-sim	R/analysis_fish.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	n	list:anonFunc14c481530500.anonList14c481530607	constructor:list
-sim	R/analysis_fish.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	n	list:anonList14c481530407	constructor:list
-sim	R/suppl_2.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	n	list:anonFunc699d2e4b0800.anonList699d2e4b0907	constructor:list
-sim	R/suppl_2.R	/^        tibble(rec = rec, dda = list(op_dda), sim = list(op_sim))$/;"	n	list:anonList699d2e4b0707	constructor:list
 sim_op	R/analysis_fish.R	/^sim_op <- read_csv("data\/sim_op_01.csv")$/;"	g
 sim_op	R/suppl_2.R	/^sim_op <- read_csv("data\/sim_op_02.csv")$/;"	g
 size	R/suppl_1.R	/^size <- 5$/;"	g
-smap_net	rpkg/R/func_ntsa.R	/^smap_net <- function(X, col = 1, lib = matrix(c(1, nrow(X)), nrow = 1), pred = NULL, Tp = 1, thr/;"	f	function:gen_emat
+smap_net	rpkg/R/func_ntsa.R	/^smap_net <- function(X, col = 1, lib = matrix(c(1, nrow(X)), nrow = 1), pred = NULL, Tp = 1, thr/;"	v	function:gen_emat
 smap_op_01	R/analysis_fish.R	/^system.time(smap_op_01 <- foreach(rec = cols, .combine = rbind) %do% {$/;"	g
 smap_op_02	R/suppl_2.R	/^system.time(smap_op_02 <- foreach(rec = cols, .combine = rbind) %do% {$/;"	g
-smplx	rpkg/R/func_ntsa.R	/^    smplx <- function(col, E, Tp) {$/;"	f	function:gen_emat.find_best_dim
+smplx	rpkg/R/func_ntsa.R	/^    smplx <- function(col, E, Tp) {$/;"	v	functionVar:gen_emat.find_best_dim
 sortID	rpkg/src/func_cpp.cpp	/^std::vector<size_t> sortID(const std::vector<double>& vec, const std::vector<size_t>& idx) {$/;"	f	typeref:typename:std::vector<size_t>
-suppl1	R/suppl_1.R	/^suppl1 <- read_csv("data\/suppl1.csv")$/;"	g
 suppl1	R/suppl_1.R	/^system.time(suppl1 <- foreach(b12 = seq(-0.75, 0.75, 0.75), .combine = rbind) %do% {$/;"	g
-suppl2	R/suppl_1.R	/^suppl2 <- read_csv("data\/suppl2.csv")$/;"	g
 suppl2	R/suppl_1.R	/^system.time(suppl2 <- foreach(i = 1:nrow(params), .combine = rbind) %do% {$/;"	g
-sur1	R/analysis_dlm.R	/^    sur1 <- coef %>% mutate(C2 = shuffle_coef(C2, lag(df_$x1), rho = rho)) %>% as.matrix()$/;"	g
 sur1	R/analysis_dlm.R	/^sur1 <- coef %>% mutate(C2 = shuffle_coef(C2, lag(df_$x1), rho = 0.4, sigma = 0.01, seed = 123))$/;"	g
-sur2	R/analysis_dlm.R	/^    sur2 <- coef %>% mutate(C3 = shuffle_coef(C3, lag(df_$x1), rho = rho)) %>% as.matrix()$/;"	g
 sur2	R/analysis_dlm.R	/^sur2 <- coef %>% mutate(C3 = shuffle_coef(C3, lag(df_$x1), rho = 0.4, sigma = 0.01, seed = 123))$/;"	g
-sur_op	rpkg/R/func_ntsa.R	/^        sur_op <- foreach(i = 1:ncol(surr), .combine = rbind) %do% {$/;"	v	function:gen_emat.ccm_test
+sur_op	rpkg/R/func_ntsa.R	/^        sur_op <- foreach(i = 1:ncol(surr), .combine = rbind) %do% {$/;"	v	functionVar:gen_emat.ccm_test
 surr	R/analysis_exp.R	/^            surr <- coef %>% mutate(across(.cols = all_of(cnames), .fns = ~{shuffle_coef(.x, den/;"	g
 surr	R/analysis_fish.R	/^            surr <- coef %>% mutate(across(.cols = all_of(cnames), .fns = ~shuffle_coef(.x, dens/;"	g
 surr	R/suppl_2.R	/^            surr <- coef %>% mutate(across(.cols = all_of(cnames), .fns = ~shuffle_coef(.x, dens/;"	g
-surr	rpkg/R/func_surrogate.R	/^    surr <- foreach(i = 1:nrow(knot), .combine = rbind) %do% {$/;"	v	function:gen_surr_ts
+surr	rpkg/R/func_surrogate.R	/^    surr <- foreach(i = 1:nrow(knot), .combine = rbind) %do% {$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
 surr_list	R/analysis_fish.R	/^system.time(surr_list <- foreach(sp = cols) %do% {$/;"	g
 theme_st	R/functions.R	/^theme_st <- function(just = NULL, pos = NULL, hl = 5.5) {$/;"	f
 tmp	R/analysis_fish.R	/^tmp <- dda_op %>% mutate(sign = if_else(c_mean < 0.0, "Harm", "Bene")) %>%$/;"	g
@@ -408,28 +332,24 @@ tmp	rpkg/R/func_ntsa.R	/^            tmp <- df %>% slice(idx) %>% pull(cols[j])$
 tmp	rpkg/R/func_ntsa.R	/^        tmp <- df %>% pull(time_col)$/;"	v	function:find_knot
 tmp	rpkg/R/func_ntsa.R	/^    tmp <- foreach(i = 1:nrow(knot), .combine = c) %do% knot[i, 1]:knot[i, 2]$/;"	v	function:gen_valid_idx
 tmp	rpkg/R/func_surrogate.R	/^                tmp <- NULL$/;"	v	function:find_twins
-tmp	rpkg/R/func_surrogate.R	/^        tmp <- foreach(j = 1:iter, .combine = cbind) %do% {$/;"	v	function:gen_surr_ts
-treat	R/analysis_exp.R	/^treat <- c(0.2, 0.5, 0.8)$/;"	c
+tmp	rpkg/R/func_surrogate.R	/^        tmp <- foreach(j = 1:iter, .combine = cbind) %do% {$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
+treat	R/analysis_exp.R	/^treat <- c(0.2, 0.5, 0.8)$/;"	g
 twin_end	rpkg/R/func_surrogate.R	/^            twin_end <- nn$/;"	v	function:find_twins
-twin_probs	rpkg/R/func_surrogate.R	/^twin_probs <- function(twins, dmat, theta = 1, twin_op) {$/;"	f
+twin_probs	rpkg/R/func_surrogate.R	/^twin_probs <- function(twins, dmat, theta = 1, twin_op) {$/;"	v	function:find_twins
 twins	rpkg/R/func_surrogate.R	/^    twins <- as.list(1:nrow(dmat))$/;"	v	function:find_twins
-twins	rpkg/R/func_surrogate.R	/^    twins <- find_twins(dmat, twin_op = twin_op, time_idx = time_idx, phase_lock = phase_lock,$/;"	v	function:gen_surr_ts
+twins	rpkg/R/func_surrogate.R	/^    twins <- find_twins(dmat, twin_op = twin_op, time_idx = time_idx, phase_lock = phase_lock,$/;"	v	functionVar:find_twins.twin_probs.gen_surr_ts
 tws_no	rpkg/R/func_surrogate.R	/^            tws_no <- length(unlist(twins)) - length(twins)$/;"	v	function:find_twins
-values_to	R/analysis_dlm.R	/^    pivot_longer(-c(time, original), names_to = "shuffle", values_to = "prediction") %>%$/;"	n	vector:anonVec9ba538260306
-values_to	R/analysis_exp.R	/^                pivot_longer(cols = c(-BR, -rho, -rec_sp), names_to = "don_sp", values_to = "sen/;"	n	vector:anonVec9bbdf1f60306
-values_to	R/suppl_1.R	/^    pivot_longer(cols = c(4, 5), names_to = "method", values_to = "coef") %>%$/;"	n	vector:anonVec699d2a0a0806
-values_to	R/suppl_1.R	/^    ungroup() %>% pivot_longer(cols = c(direct, indirect), names_to = "method", values_to = "RMS/;"	n	vector:anonVec699d2a0a0906
-wi	rpkg/R/func_surrogate.R	/^            wi <- exp(-theta * di) \/ mean(di)$/;"	v	function:twin_probs
-wmat	rpkg/R/func_ntsa.R	/^            wmat <- exp(-theta * dmat \/ dbar)$/;"	v	function:gen_emat.smap_net
+wi	rpkg/R/func_surrogate.R	/^            wi <- exp(-theta * di) \/ mean(di)$/;"	v	functionVar:find_twins.twin_probs
+wmat	rpkg/R/func_ntsa.R	/^            wmat <- exp(-theta * dmat \/ dbar)$/;"	v	functionVar:gen_emat.smap_net
 x_	rpkg/R/func_common.R	/^        x_ <- (x - min(x, na.rm = TRUE)) \/ (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))$/;"	v	function:normalize
-xmap	rpkg/R/func_ntsa.R	/^xmap <- function(df, ref, tar, lib = matrix(c(1, nrow(df)), nrow = 1), E, Tp = 0,$/;"	f	function:gen_emat
+xmap	rpkg/R/func_ntsa.R	/^xmap <- function(df, ref, tar, lib = matrix(c(1, nrow(df)), nrow = 1), E, Tp = 0,$/;"	v	function:gen_emat
 xmap_neg	R/analysis_fish.R	/^xmap_neg <- dda_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(c_mean < 0) %>% pull(xmap)$/;"	g
 xmap_neg	R/suppl_2.R	/^xmap_neg <- dda_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(c_mean < 0) %>% pull(xmap)$/;"	g
 xmap_pos	R/analysis_fish.R	/^xmap_pos <- dda_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(c_mean > 0) %>% pull(xmap)$/;"	g
 xmap_pos	R/suppl_2.R	/^xmap_pos <- dda_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(c_mean > 0) %>% pull(xmap)$/;"	g
-y	rpkg/R/func_ntsa.R	/^        y <- df %>% gen_emat(cols = col, lags = Tp, knot = knot)$/;"	v	function:gen_emat.find_best_dim.smplx
-y	rpkg/R/func_ntsa.R	/^    y <- X %>% gen_emat(cols = col, lags = Tp, knot = knot)$/;"	v	function:gen_emat.smap_net
-y	rpkg/R/func_ntsa.R	/^    y <- df %>% gen_emat(cols = tar, lags = Tp, knot = lib)$/;"	v	function:gen_emat.xmap
-y_	rpkg/R/func_ntsa.R	/^            y_ <- Smplx(X, y, dmat, idx_i - 1, idx - 1, E + 1)$/;"	v	function:gen_emat.xmap
-y_	rpkg/R/func_ntsa.R	/^            y_ <- getPred(coef, cbind(X, 1))$/;"	v	function:gen_emat.smap_net
-y_	rpkg/R/func_ntsa.R	/^        y_ <- rep(NA, nrow(X))$/;"	v	function:gen_emat.find_best_dim.smplx
+y	rpkg/R/func_ntsa.R	/^        y <- df %>% gen_emat(cols = col, lags = Tp, knot = knot)$/;"	v	functionVar:gen_emat.find_best_dim.smplx
+y	rpkg/R/func_ntsa.R	/^    y <- X %>% gen_emat(cols = col, lags = Tp, knot = knot)$/;"	v	functionVar:gen_emat.smap_net
+y	rpkg/R/func_ntsa.R	/^    y <- df %>% gen_emat(cols = tar, lags = Tp, knot = lib)$/;"	v	functionVar:gen_emat.xmap
+y_	rpkg/R/func_ntsa.R	/^            y_ <- Smplx(X, y, dmat, idx_i - 1, idx - 1, E + 1)$/;"	v	functionVar:gen_emat.xmap
+y_	rpkg/R/func_ntsa.R	/^            y_ <- getPred(coef, cbind(X, 1))$/;"	v	functionVar:gen_emat.smap_net
+y_	rpkg/R/func_ntsa.R	/^        y_ <- rep(NA, nrow(X))$/;"	v	functionVar:gen_emat.find_best_dim.smplx
