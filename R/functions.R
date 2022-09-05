@@ -14,8 +14,11 @@
 
 ### load dependent libraries
 library(tidyverse)
+library(broom)
+library(broom.mixed)
 library(foreach)
 library(doParallel)
+library(lme4)
 library(glmnet)
 library(rpkg)
 library(patchwork)

@@ -191,15 +191,19 @@ gp_03b <- gp_03b + annotation_custom(ggplotGrob(tmp), xmin = 0.6, xmax = 1.5, ym
 xmap_pos <- dda_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(c_mean > 0) %>% pull(xmap)
 xmap_neg <- dda_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(c_mean < 0) %>% pull(xmap)
 
-gp_03c <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>%
+tmp <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>%
     mutate(sign = case_when(xmap %in% xmap_pos ~ "Beneficial", xmap %in% xmap_neg ~ "Harmful", don == "all" ~ "All", TRUE ~ "Zero")) %>%
     filter(sign != "Zero") %>%
-    mutate(sign = factor(sign, levels = c("Harmful", "Beneficial", "All"))) %>%
-    ggplot(aes(x = 1 - rho, y = sensitivity)) +
+    mutate(sign = factor(sign, levels = c("Harmful", "Beneficial", "All")))
+
+a1 <- tmp %>% mutate(shuffle = 1 - rho) %>% with(glmer(sensitivity ~ shuffle * sign + (1|xmap), family = Gamma(link = log)))
+a1 %>% tidy()
+
+gp_03c <-tmp %>% ggplot(aes(x = 1 - rho, y = sensitivity)) +
     facet_wrap(~sign) +
     geom_hline(yintercept = 1.0, size = 0.25, linetype = 2) +
     geom_vline(xintercept = 0.0, size = 0.25, linetype = 2) +
-    geom_smooth(aes(color = sign, fill = sign), size = 0.5) +
+    geom_smooth(aes(color = sign, fill = sign), method = "glm", method.args = list(family = Gamma(link = log)), size = 0.5) +
     scale_color_brewer(palette = "Set1", guide = "none") +
     scale_fill_brewer(palette = "Set1", guide = "none") +
     xlab(expression(paste("Shuffle intensity (", 1 - rho, ")"))) +

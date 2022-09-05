@@ -47,6 +47,7 @@ _rpkg_getPred	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getPred(SEXP CSEX
 _rpkg_getRMSE	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getRMSE(SEXP v1SEXP, SEXP v2SEXP) {$/;"	f	typeref:typename:RcppExport SEXP
 _rpkg_getRho	rpkg/src/RcppExports.cpp	/^RcppExport SEXP _rpkg_getRho(SEXP v1SEXP, SEXP v2SEXP) {$/;"	f	typeref:typename:RcppExport SEXP
 a1	R/analysis_exp.R	/^a1 <- dda_res %>% filter(rec_sp == "Cm" & don_sp == "Ac") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
+a1	R/analysis_fish.R	/^a1 <- tmp %>% mutate(shuffle = 1 - rho) %>% with(glmer(sensitivity ~ shuffle * sign + (1|xmap), /;"	g
 a2	R/analysis_exp.R	/^a2 <- dda_res %>% filter(rec_sp == "Cc" & don_sp == "Ac") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
 a3	R/analysis_exp.R	/^a3 <- dda_res %>% filter(rec_sp == "Cc" & don_sp == "Cm") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
 a4	R/analysis_exp.R	/^a4 <- dda_res %>% filter(rec_sp == "Cm" & don_sp == "Cc") %>% with(lmer(coef ~ BR * rec_dens + (/;"	g
@@ -193,7 +194,7 @@ gp_02a	R/analysis_exp.R	/^gp_02a <- read_csv("data\/dda_res.csv") %>% filter(rec
 gp_02b	R/analysis_exp.R	/^gp_02b <- read_csv("data\/dds_res.csv") %>%$/;"	g
 gp_03a	R/analysis_fish.R	/^gp_03a <- dda_op %>% mutate(rec = factor(rec, levels = rev(cols)), don = factor(don, levels = co/;"	g
 gp_03b	R/analysis_fish.R	/^gp_03b <- dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +$/;"	g
-gp_03c	R/analysis_fish.R	/^gp_03c <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>%$/;"	g
+gp_03c	R/analysis_fish.R	/^gp_03c <-tmp %>% ggplot(aes(x = 1 - rho, y = sensitivity)) +$/;"	g
 gp_S1a	R/suppl_1.R	/^gp_S1a <- df1 %>% pivot_longer(-time, names_to = "species", values_to = "density") %>%$/;"	g
 gp_S1b	R/suppl_1.R	/^gp_S1b <- tibble(V = seq(0, 5, 0.01), A12 = -1.4 * V^0.25) %>% ggplot(aes(x = V, y = A12)) +$/;"	g
 gp_S1c	R/suppl_1.R	/^gp_S1c <- df2 %>% pivot_longer(-time, names_to = "species", values_to = "density") %>%$/;"	g
