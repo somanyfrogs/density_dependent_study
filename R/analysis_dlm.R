@@ -13,6 +13,7 @@
 #### ver 1.0.1: Updated on 20211122
 #### ver 1.0.2: Updated on 20211215
 #### ver 1.1.0: Updated on 20220808
+#### ver 1.1.1: Updated on 20220906
 
 ### load source code
 source("R/functions.R")
@@ -87,7 +88,7 @@ gp_01a <- df %>% filter(between(time, 100, 200)) %>%
     scale_y_continuous(breaks = seq(0, 1, 0.5), limits = c(0, 1)) +
     xlab("Time") +
     ylab("Density") +
-    labs(tag = expression((italic(a))))
+    labs(tag = expression(bold(A)))
 
 gp_01b <- demo_1 %>% mutate(Coef = factor(Coef, levels = c("P13", "C12"))) %>%
     ggplot(aes(x = x1, color = Coef, fill = Coef)) +
@@ -100,7 +101,7 @@ gp_01b <- demo_1 %>% mutate(Coef = factor(Coef, levels = c("P13", "C12"))) %>%
                           frac(
                                paste(partialdiff, italic(x)[1](italic(t) + 1)),
                                paste(partialdiff, italic(x)[paste(1, italic(j))](italic(t))))))) +
-    labs(tag = expression((italic(b))))
+    labs(tag = expression(bold(B)))
 
 gp_01c <- demo_2 %>% filter(between(time, 150, 200)) %>%
     ggplot(aes(x = time)) + geom_line(aes(y = original), size = 0.25) +
@@ -110,7 +111,7 @@ gp_01c <- demo_2 %>% filter(between(time, 150, 200)) %>%
     scale_y_continuous(breaks = seq(0, 1, 0.5), limits = c(0, 1)) +
     xlab("Time") +
     ylab(expression(paste("Prediction (", italic(x)[1], ")"))) +
-    labs(tag = expression((italic(c))))
+    labs(tag = expression(bold(C)))
 
 gp_01d <- demo_3 %>% mutate(shuffle = factor(shuffle, levels = c("P13", "C12"))) %>%
     ggplot(aes(x = 1 - rho, y = CV / cv_orig, color = shuffle, fill = shuffle)) +
@@ -122,11 +123,11 @@ gp_01d <- demo_3 %>% mutate(shuffle = factor(shuffle, levels = c("P13", "C12")))
     scale_y_continuous(breaks = seq(0.5, 2, 0.5), limits = c(0.5, 2)) +
     xlab(expression(paste("Shuffle intensity (", 1 - rho, ")"))) +
     ylab(expression(paste("Dynamical sensitivity (", frac(CV, "CV'"), ")"))) +
-    labs(tag = expression((italic(d))))
+    labs(tag = expression(bold(D)))
 
 fig_01 <- (((gp_01a + plot_spacer() + plot_layout(ncol = 1, height = c(2, 1))) | gp_01b) / (gp_01c | gp_01d)) & theme_st(c(0, 0), c(0, 0))
 
 ## Prepare 'fig' directory under your current workspace
 ## then save figure 1 in fig
-ggsave("fig/fig_01.eps", fig_01, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 15, height = 12, units = "cm")
+ggsave("fig/fig_01.eps", fig_01, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 15, height = 12, units = "cm")
 

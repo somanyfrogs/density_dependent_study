@@ -5,6 +5,7 @@
 #### ver 1.0.0: initially written on 20210621 by K.Kawats
 #### ver 1.1.0: updated on 20210718 by K.Kawatsu
 #### ver 2.0.0: updated on 20220808 by K.Kawatsu
+#### ver 2.0.1: updated on 20220906 by K.Kawatsu
 
 ### load source code
 source("R/functions.R")
@@ -23,7 +24,7 @@ df2 <- gen_dl_model(state = curr2, len = 7500, r = r, A = A, beta = -0.25, h = 0
 gp_S1a <- df1 %>% pivot_longer(-time, names_to = "species", values_to = "density") %>%
     ggplot(aes(x = time, y = density, color = species)) +
     geom_line(size = 0.25) +
-    scale_color_brewer(palette = "Set1") + xlab("Time") + ylab("Density") + labs(tag = expression((italic(a))))
+    scale_color_brewer(palette = "Set1") + xlab("Time") + ylab("Density") + labs(tag = expression(bold(A)))
 
 gp_S1b <- tibble(V = seq(0, 5, 0.01), A12 = -1.4 * V^0.25) %>% ggplot(aes(x = V, y = A12)) +
     geom_hline(yintercept = 0, size = 0.25, linetype = 2) + geom_line() +
@@ -33,7 +34,7 @@ gp_S1b <- tibble(V = seq(0, 5, 0.01), A12 = -1.4 * V^0.25) %>% ggplot(aes(x = V,
 gp_S1c <- df2 %>% pivot_longer(-time, names_to = "species", values_to = "density") %>%
     ggplot(aes(x = time, y = density, color = species)) +
     geom_line(size = 0.25) +
-    scale_color_brewer(palette = "Set1") + xlab("Time") + ylab("Density") + labs(tag = expression((italic(b))))
+    scale_color_brewer(palette = "Set1") + xlab("Time") + ylab("Density") + labs(tag = expression(bold(B)))
 
 gp_S1d <- tibble(V = seq(0, 5, 0.01), A12 = -1.4 * V^-0.25) %>% ggplot(aes(x = V, y = A12)) +
     geom_hline(yintercept = 0, size = 0.25, linetype = 2) + geom_line() +
@@ -42,7 +43,7 @@ gp_S1d <- tibble(V = seq(0, 5, 0.01), A12 = -1.4 * V^-0.25) %>% ggplot(aes(x = V
 
 fig_S1 <- (gp_S1a + gp_S1b + plot_layout(nrow = 1, width = c(2, 1))) /
     (gp_S1c + gp_S1d + plot_layout(nrow = 1, width = c(2, 1))) & theme_st(c(1, 1), c(1, 1))
-ggsave("fig/fig_S1.eps", fig_S1, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 10, height = 8, units = "cm")
+ggsave("fig/fig_S1.eps", fig_S1, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 10, height = 8, units = "cm")
 
 ### Figure S2a
 seed <- 333
@@ -147,7 +148,7 @@ gp_S2a <- suppl1 %>%
     ylim(-1.2, 1.2) +
     xlab(expression(paste("Density of species ", italic(x)[1](italic(t))))) +
     ylab(expression(paste("Per capita coefficients ", italic(f)[12]))) +
-    labs(tag = expression((italic(a)))) +
+    labs(tag = expression(bold(A))) +
     theme_st()
 
 suppl2 <- read_csv("data/suppl2.csv")
@@ -162,9 +163,9 @@ gp_S2b <- suppl2 %>% group_by(p_noise, o_noise) %>%
     scale_y_continuous(expand = rep(5e-4, 2)) +
     xlab(expression(paste("Process noise (", sigma[p], ")"))) +
     ylab(expression(paste("Observation error (", sigma[o], ")"))) +
-    labs(tag = expression((italic(b)))) +
+    labs(tag = expression(bold(B))) +
     theme_st()
 
 fig_S2 <- gp_S2a / gp_S2b
-ggsave("fig/fig_S2.eps", fig_S2, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 10, height = 10, units = "cm")
+ggsave("fig/fig_S2.eps", fig_S2, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 10, height = 10, units = "cm")
 

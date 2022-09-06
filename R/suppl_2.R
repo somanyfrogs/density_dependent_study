@@ -7,6 +7,7 @@
 #### ver 0.1.0: Updated on 20211120
 #### ver 0.2.0: Updated on 20211215
 #### ver 0.3.0: Updated on 20220808
+#### ver 0.3.1: Updated on 20220906
 
 ### load source code
 source("R/functions.R")
@@ -36,7 +37,7 @@ gp_S3a <- fish %>% select(all_of(c("time", col_alpha))) %>%
     facet_wrap(~Species, ncol = 3) +
     geom_path(size = 0.25) +
     scale_x_continuous(breaks = seq(1, 201, 48), labels = seq(2002, 2018, 4)) +
-    xlab("Year") + ylab("Observation (normalized)") + labs(tag = expression((italic(a))))
+    xlab("Year") + ylab("Observation (normalized)") + labs(tag = expression(bold(A)))
 
 gp_S3b <- fish %>% select(all_of(c("time", col_beta))) %>%
     pivot_longer(-time, names_to = "Species", values_to = "Obs") %>%
@@ -45,12 +46,12 @@ gp_S3b <- fish %>% select(all_of(c("time", col_beta))) %>%
     facet_wrap(~Species, ncol = 3) +
     geom_path(size = 0.25) +
     scale_x_continuous(breaks = seq(1, 201, 48), labels = seq(2002, 2018, 4)) +
-    xlab("Year") + ylab("Observation (normalized)") + labs(tag = expression((italic(b))))
+    xlab("Year") + ylab("Observation (normalized)") + labs(tag = expression(bold(B)))
 
 fig_S3 <- (gp_S3a + gp_S3b + plot_layout(ncol = 1, height = c(5, 2))) & theme_st()
 
 ## save figure S3 in 'fig' directory under your current workspace
-ggsave("fig/fig_S3.eps", fig_S3, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 15, height = 20, units = "cm")
+ggsave("fig/fig_S3.eps", fig_S3, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 15, height = 20, units = "cm")
 
 ### Figure S4
 ### Jacobian-estimation analysis and simulation
@@ -147,7 +148,7 @@ gp_S4a <- dda_op %>% mutate(rec = factor(rec, levels = rev(cols)), don = factor(
     scale_size_continuous(guide = "none") +
     scale_x_discrete(labels = 1:18, position = "top") +
     scale_y_discrete(labels = 18:1) +
-    xlab("Donor species' ID") + ylab("Recipient species' ID") + labs(tag = expression((italic(a))))
+    xlab("Donor species' ID") + ylab("Recipient species' ID") + labs(tag = expression(bold(A)))
 
 gp_S4b <-  dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +
     geom_hline(yintercept = 0.0, size = 0.25, linetype = 2) +
@@ -157,7 +158,7 @@ gp_S4b <-  dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +
     geom_point() + xlim(-0.6, 1.4) + ylim(-1.0, 0.8) +
     xlab(expression(paste("Mean per capita effect ", bar(italic(A))[italic(ij)]))) +
     ylab(expression(paste("Density dependence of ", tilde(italic(A[ij]))))) +
-    labs(tag = expression((italic(b))))
+    labs(tag = expression(bold(B)))
 
 tmp <- dda_op %>% mutate(sign = if_else(c_mean < 0.0, "Harm", "Bene")) %>%
     filter(!is.na(sign)) %>%
@@ -179,7 +180,7 @@ gp_S4c <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(sensitivity 
     facet_wrap(~sign) +
     geom_hline(yintercept = 1.0, size = 0.25, linetype = 2) +
     geom_vline(xintercept = 0.0, size = 0.25, linetype = 2) +
-    geom_smooth(aes(color = sign, fill = sign), size = 0.5) +
+    geom_smooth(aes(color = sign, fill = sign), method = "glm", method.args = list(family = Gamma(link = log)), size = 0.5) +
     scale_color_brewer(palette = "Set1", guide = "none") +
     scale_fill_brewer(palette = "Set1", guide = "none") +
     xlab(expression(paste("Shuffle intensity (", 1 - rho, ")"))) +
@@ -187,4 +188,4 @@ gp_S4c <- sim_op %>% mutate(xmap = str_c(rec, "_", don)) %>% filter(sensitivity 
     labs(tag = expression((italic(c))))
  
 fig_S4 <- ({(gp_S4a | gp_S4b) / gp_S4c} + plot_layout(height = c(4, 3))) & theme_st()
-ggsave("fig/fig_S4.eps", fig_S4, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 16, height = 15, units = "cm")
+ggsave("fig/fig_S4.eps", fig_S4, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 16, height = 15, units = "cm")

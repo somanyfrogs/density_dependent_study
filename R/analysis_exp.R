@@ -12,7 +12,7 @@
 #### ver 0.3.0: Updated on 20211118
 #### ver 0.4.0: Updated on 20211215
 #### ver 0.4.1: Updated on 20220808
-#### ver 0.4.2: Updated on 20220903
+#### ver 0.4.2: Updated on 20220906
 
 ### load source code
 source("R/functions.R")
@@ -154,7 +154,7 @@ gp_02a <- read_csv("data/dda_res.csv") %>% filter(rec_sp != "Ac") %>%
                           frac(
                                paste(partialdiff, italic(x)[italic(i)](italic(t) + 1)),
                                paste(partialdiff, italic(x)[italic(ij)](italic(t))))))) +
-    labs(tag = expression((italic(a))))
+    labs(tag = expression(bold(A)))
 
 ## make Figure 2b
 gp_02b <- read_csv("data/dds_res.csv") %>%
@@ -174,11 +174,11 @@ gp_02b <- read_csv("data/dds_res.csv") %>%
     scale_y_continuous(breaks = seq(1.0, 4.0, 1.0)) +
     xlab(expression(paste("Shuffle intensity (", 1 - rho, ")"))) +
     ylab(expression(paste("Dynamical sensitivity ", frac(CV, "CV'")))) +
-    labs(tag = expression((italic(b))))
+    labs(tag = expression(bold(B)))
 
 fig_02 <- (gp_02a + gp_02b + plot_layout(nrow = 1, width = c(2, 3))) & theme_st(just = c(0, 0), pos = c(0, 0))
 
 ## Prepare 'fig' directory under your current workspace
 ## then save figure 2 in fig
-ggsave("fig/fig_02.eps", fig_02, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 16, height = 8, units = "cm")
+ggsave("fig/fig_02.eps", fig_02, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 16, height = 8, units = "cm")
 

@@ -11,6 +11,7 @@
 #### ver 0.2.0: Updated on 20211118
 #### ver 0.3.0: Updated on 20211215
 #### ver 0.4.0: Updated on 20220808
+#### ver 0.4.1: Updated on 20220906
 
 ### load source code
 source("R/functions.R")
@@ -167,7 +168,7 @@ gp_03a <- dda_op %>% mutate(rec = factor(rec, levels = rev(cols)), don = factor(
     scale_size_continuous(guide = "none") +
     scale_x_discrete(labels = 1:13, position = "top") +
     scale_y_discrete(labels = 13:1) +
-    xlab("Donor species' ID") + ylab("Recipient species' ID") + labs(tag = expression((italic(a))))
+    xlab("Donor species' ID") + ylab("Recipient species' ID") + labs(tag = expression(bold(A)))
 
 gp_03b <- dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +
     geom_hline(yintercept = 0.0, size = 0.25, linetype = 2) +
@@ -177,7 +178,7 @@ gp_03b <- dda_op %>% ggplot(aes(x = c_mean, y = dd_est)) +
     geom_point() + xlim(-0.6, 1.4) + ylim(-1.0, 0.8) +
     xlab(expression(paste("Mean per capita effect ", italic(bar(c)[ij])))) +
     ylab(expression(paste("Density dependence of ", italic(hat(c[ij]))))) +
-    labs(tag = expression((italic(b))))
+    labs(tag = expression(bold(B)))
 
 tmp <- dda_op %>% mutate(sign = if_else(c_mean < 0.0, "Harm", "Bene")) %>%
     filter(!is.na(sign)) %>%
@@ -208,11 +209,11 @@ gp_03c <-tmp %>% ggplot(aes(x = 1 - rho, y = sensitivity)) +
     scale_fill_brewer(palette = "Set1", guide = "none") +
     xlab(expression(paste("Shuffle intensity (", 1 - rho, ")"))) +
     ylab(expression(paste("Dynamical sensitivity ", frac(CV, "CV'")))) +
-    labs(tag = expression((italic(c))))
+    labs(tag = expression(bold(c)))
 
 fig_03 <- ({(gp_03a | gp_03b) / gp_03c} + plot_layout(height = c(4, 3))) & theme_st()
 
 ## Prepare 'fig' directory under your current workspace
 ## then save figure 3 in fig
-ggsave("fig/fig_03.eps", fig_03, device = cairo_ps, fallback_resolution = 600, family = "Times", width = 16, height = 15, units = "cm")
+ggsave("fig/fig_03.eps", fig_03, device = cairo_ps, fallback_resolution = 1200, family = "Helvetica", width = 16, height = 15, units = "cm")
 
