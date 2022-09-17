@@ -1,13 +1,19 @@
-This file is the documentation for the following paper:
+This file is the documentation for the following paper
+
 Title: Density dependence of species interactions and ecological stability
+
 Authors: Kazutaka Kawatsu, Yutaka Osada, Yumiko Ishii, Reiji Masuda, Masakazu Shimada and Michio Kondoh
 
 Written on 20211215 by K.Kawatsu.
-Last update: 20220817.
+
+Last update: 20220917.
 
 'data' directory includes dataset for the analysis and the result
+
 'fig' directory includes figure files appeared in the manuscript
+
 'R' directory includes R source codes for the analysis and visualization
+
 'rpkg' directory is an R package for this paper, which includes R and cpp source codes
 
 Installation of rpkg
